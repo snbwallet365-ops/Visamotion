@@ -49,7 +49,7 @@ async function copyCode() {
 
 <template>
   <div>
-    <div class="flex items-center gap-3 px-4 py-3">
+    <div class="vm-integration-row flex items-center gap-3 px-4 py-3">
       <div
         class="flex size-8 shrink-0 items-center justify-center rounded-md border border-default bg-elevated"
       >
@@ -60,7 +60,7 @@ async function copyCode() {
       </div>
 
       <div class="min-w-0 flex-1">
-        <div class="flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
           <h3 class="text-sm text-highlighted">
             Slack
           </h3>
@@ -71,7 +71,7 @@ async function copyCode() {
             <span
               class="size-1.5 shrink-0 rounded-full"
               :class="isLinked
-                ? 'bg-emerald-400/90'
+                ? 'bg-success'
                 : 'bg-toned'"
             />
             {{ isLinked ? "Linked" : "Not linked" }}
@@ -91,7 +91,7 @@ async function copyCode() {
         </p>
       </div>
 
-      <div class="flex shrink-0 items-center gap-1.5">
+      <div class="vm-integration-actions flex shrink-0 items-center gap-1.5">
         <UButton
           v-if="isLinked"
           color="neutral"

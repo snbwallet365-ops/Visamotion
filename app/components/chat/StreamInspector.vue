@@ -71,7 +71,7 @@ onUnmounted(() => document.removeEventListener("click", onDocumentClick));
     >
       <div
         v-if="open"
-        class="absolute bottom-full left-0 z-20 mb-2 w-72 overflow-hidden rounded-lg border border-default bg-elevated shadow-lg"
+        class="absolute bottom-full left-0 z-20 mb-2 w-72 max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg border border-default bg-elevated shadow-lg"
       >
         <div class="border-b border-default px-3 py-2">
           <p class="text-xs font-medium text-highlighted">

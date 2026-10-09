@@ -35,11 +35,11 @@ const {
 const statusDotClass = computed(() => {
   switch (status.value.color) {
     case "success":
-      return "bg-emerald-400/90";
+      return "bg-success";
     case "warning":
-      return "bg-amber-400/90";
+      return "bg-warning";
     case "error":
-      return "bg-red-400/90";
+      return "bg-error";
     default:
       return "bg-toned";
   }
@@ -48,7 +48,7 @@ const statusDotClass = computed(() => {
 
 <template>
   <div>
-    <div class="flex items-center gap-3 px-4 py-3">
+    <div class="vm-integration-row flex items-center gap-3 px-4 py-3">
       <div
         class="flex size-8 shrink-0 items-center justify-center rounded-md border border-default bg-elevated"
       >
@@ -59,7 +59,7 @@ const statusDotClass = computed(() => {
       </div>
 
       <div class="min-w-0 flex-1">
-        <div class="flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
           <h2 class="text-sm text-highlighted">
             {{ connector.name }}
           </h2>
@@ -84,7 +84,7 @@ const statusDotClass = computed(() => {
         </p>
       </div>
 
-      <div class="flex shrink-0 items-center gap-1">
+      <div class="vm-integration-actions flex shrink-0 items-center gap-1">
         <UButton
           v-if="canConnect"
           color="neutral"

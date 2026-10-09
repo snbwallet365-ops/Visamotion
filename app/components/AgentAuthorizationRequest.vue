@@ -31,9 +31,9 @@ const statusLabel = computed(() => {
 
 const statusDotClass = computed(() => {
   if (isFailed.value) {
-    return "bg-red-400/90";
+    return "bg-error";
   }
-  return "bg-amber-400/90 shadow-[0_0_6px_1px_rgba(251,191,36,0.25)]";
+  return "bg-warning";
 });
 
 const subtitle = computed(() => {
