@@ -32,7 +32,8 @@
     "build:agent": "eve build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "auth:schema": "npx auth@latest generate --config server/utils/auth.ts --output server/db/schema/auth.ts -y && eslint server/db/schema/auth.ts --fix"
+    "auth:schema": "npx auth@latest generate --config server/utils/auth.ts --output server/db/schema/auth.ts -y && eslint server/db/schema/auth.ts --fix",
+    "test:ui": "node --test tests/ui-navigation.test.ts"
   },
   "dependencies": {
     "@ai-sdk/mcp": "^2.0.41",
