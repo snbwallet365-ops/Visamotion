@@ -10,7 +10,7 @@ defineProps<{
 <template>
   <div
     class="px-4 py-3"
-    :class="inline ? 'flex items-center justify-between gap-4' : undefined"
+    :class="inline ? 'vm-settings-row flex items-center justify-between gap-4' : undefined"
   >
     <div
       class="min-w-0"

@@ -12,14 +12,15 @@ function isActive(path: string) {
 </script>
 
 <template>
-  <nav class="flex gap-1 border-b border-default">
+  <nav class="flex flex-wrap gap-1 border-b border-default" aria-label="Settings navigation">
     <NuxtLink
       v-for="item in items"
       :key="item.to"
       :to="item.to"
+      :aria-current="isActive(item.to) ? 'page' : undefined"
       class="relative -mb-px inline-flex items-center gap-2 border-b-2 px-3 py-2.5 text-sm transition-colors"
       :class="isActive(item.to)
-        ? 'border-highlighted font-medium text-highlighted'
+        ? 'border-primary font-medium text-blue-600'
         : 'border-transparent text-muted hover:text-toned'"
     >
       <UIcon

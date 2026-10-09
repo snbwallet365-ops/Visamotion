@@ -14,7 +14,7 @@ const color = computed(() => {
   return (
     {
       "output-available":
-        "bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 text-white dark:from-sky-500 dark:via-blue-600 dark:to-indigo-700",
+        "bg-default text-highlighted",
       "output-error": "bg-muted text-error",
     }[props.invocation.state as string] || "bg-muted text-muted"
   );
@@ -33,20 +33,20 @@ const message = computed(() => {
 
 <template>
   <div
-    class="my-5 w-full max-w-md shrink-0 rounded-xl px-5 py-4"
+    class="my-5 w-full max-w-md shrink-0 vm-card px-5 py-4"
     :class="color"
   >
     <template v-if="invocation.state === 'output-available'">
       <div class="mb-3 flex items-start justify-between">
         <div class="flex items-baseline">
           <span class="text-4xl font-bold">{{ invocation.output.temperature }}°</span>
-          <span class="text-base text-white/80">C</span>
+          <span class="text-base text-muted">C</span>
         </div>
         <div class="text-right">
           <div class="mb-1 text-base font-medium">
             {{ invocation.output.location }}
           </div>
-          <div class="text-xs text-white/70">
+          <div class="text-xs text-muted">
             H:{{ invocation.output.temperatureHigh }}° L:{{ invocation.output.temperatureLow }}°
           </div>
         </div>
@@ -56,7 +56,7 @@ const message = computed(() => {
         <div class="flex items-center gap-2">
           <UIcon
             :name="`i-lucide-${invocation.output.condition.icon}`"
-            class="size-6 text-white"
+            class="size-6 text-primary"
           />
           <div class="text-sm font-medium">
             {{ invocation.output.condition.text }}
@@ -67,14 +67,14 @@ const message = computed(() => {
           <div class="flex items-center gap-1">
             <UIcon
               name="i-lucide-droplets"
-              class="size-3 text-blue-200"
+              class="size-3 text-primary"
             />
             <span>{{ invocation.output.humidity }}%</span>
           </div>
           <div class="flex items-center gap-1">
             <UIcon
               name="i-lucide-wind"
-              class="size-3 text-blue-200"
+              class="size-3 text-primary"
             />
             <span>{{ invocation.output.windSpeed }} km/h</span>
           </div>
@@ -83,26 +83,26 @@ const message = computed(() => {
 
       <div
         v-if="invocation.output.dailyForecast.length > 0"
-        class="flex items-center justify-between"
+        class="flex flex-wrap items-center justify-between gap-3"
       >
         <div
           v-for="(forecast, index) in invocation.output.dailyForecast"
           :key="index"
           class="flex flex-col items-center gap-1.5"
         >
-          <div class="text-xs font-medium text-white/70">
+          <div class="text-xs font-medium text-muted">
             {{ forecast.day }}
           </div>
 
           <UIcon
             :name="`i-lucide-${forecast.condition.icon}`"
-            class="size-5 text-white"
+            class="size-5 text-primary"
           />
           <div class="text-xs font-medium">
             <div>
               {{ forecast.high }}°
             </div>
-            <div class="text-white/60">
+            <div class="text-muted">
               {{ forecast.low }}°
             </div>
           </div>
@@ -133,5 +133,8 @@ const message = computed(() => {
         </div>
       </div>
     </div>
+    <p v-else-if="invocation.state === 'output-error'" class="text-sm text-error" role="alert">
+      {{ message }}
+    </p>
   </div>
 </template>

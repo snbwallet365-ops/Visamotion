@@ -97,10 +97,11 @@ async function confirmDelete() {
           >
             <NuxtLink
               :to="`/chat/${thread.id}`"
-              class="flex items-center gap-1.5 overflow-hidden rounded-md px-2 py-1 text-sm transition-colors"
+              :aria-current="isActive(thread.id) ? 'page' : undefined"
+              class="flex items-center gap-1.5 overflow-hidden min-h-11 rounded-lg px-3 py-2 text-sm transition-colors"
               :class="isActive(thread.id)
-                ? 'bg-linear-to-r from-elevated to-elevated/0 text-highlighted brightness-125'
-                : 'text-muted hover:bg-linear-to-r hover:from-elevated hover:to-elevated/0'"
+                ? 'bg-[var(--vm-active)] text-blue-600 font-medium'
+                : 'text-muted hover:bg-accented hover:text-highlighted'"
             >
               <span class="truncate">{{ thread.title }}</span>
             </NuxtLink>
