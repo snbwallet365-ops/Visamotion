@@ -74,7 +74,7 @@ const quickChats = [
               {{ greeting }}
             </h1>
             <p class="text-sm text-muted sm:text-base">
-              V — your personal agent
+              VisaMOTion — your AI workspace
             </p>
           </div>
 
@@ -88,7 +88,7 @@ const quickChats = [
             <template #footer>
               <UChatPromptSubmit
                 class="ms-auto shrink-0"
-                color="neutral"
+                color="primary"
                 size="sm"
               />
             </template>

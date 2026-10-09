@@ -110,7 +110,7 @@ function handleInputResponses(responses: Parameters<typeof respond>[0]) {
             :status="status"
             :spacing-offset="160"
             :assistant="{ side: 'left', variant: 'naked', ui: { container: 'relative flex w-full min-w-0 items-start' } }"
-            class="pt-(--ui-header-height) pb-4 sm:pb-6"
+            class="pt-6 pb-4 sm:pb-6"
           >
             <template #indicator>
               <ChatActivityIndicator />
@@ -147,7 +147,7 @@ function handleInputResponses(responses: Parameters<typeof respond>[0]) {
             v-model="input"
             :error="chatError"
             variant="subtle"
-            class="sticky bottom-0 z-10 [view-transition-name:chat-prompt] rounded-b-none"
+            class="sticky bottom-0 z-10 [view-transition-name:chat-prompt] mb-4 vm-safe-footer"
             :ui="{ base: 'px-1.5' }"
             @submit="handleSubmit"
           >
@@ -157,7 +157,7 @@ function handleInputResponses(responses: Parameters<typeof respond>[0]) {
               <UChatPromptSubmit
                 class="ms-auto shrink-0"
                 :status="status"
-                color="neutral"
+                color="primary"
                 size="sm"
                 @stop="cancel()"
                 @reload="retry()"

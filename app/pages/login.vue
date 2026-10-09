@@ -70,7 +70,7 @@ async function handleSubmit() {
   <div class="flex min-h-svh flex-col bg-default text-default lg:flex-row">
     <section class="flex flex-1 items-center justify-center border-b border-default px-6 py-10 lg:border-b-0 lg:border-e lg:px-12 lg:py-8">
       <div class="w-full max-w-sm">
-        <UCard class="w-full">
+        <UCard class="vm-card w-full">
           <template #header>
             <h2 class="text-lg font-semibold text-highlighted">
               {{ mode === "sign-in" ? "Sign in" : "Create account" }}
@@ -126,7 +126,7 @@ async function handleSubmit() {
             <UButton
               type="submit"
               block
-              color="neutral"
+              color="primary"
               :loading="loading"
             >
               {{ mode === "sign-in" ? "Sign in" : "Create account" }}
@@ -163,17 +163,14 @@ async function handleSubmit() {
           <AppLogo class="h-[18px] w-auto text-highlighted" />
         </NuxtLink>
 
-        <UColorModeButton
-          color="neutral"
-          variant="ghost"
-        />
+        <span class="text-sm font-semibold text-highlighted">VisaMOTion</span>
       </header>
 
       <div class="flex flex-1 flex-col justify-center py-10 lg:py-16">
         <div class="max-w-md space-y-5">
           <div class="space-y-3">
             <h1 class="text-3xl font-semibold tracking-tight text-highlighted sm:text-4xl">
-              V
+              VisaMOTion
             </h1>
             <p class="text-sm leading-relaxed text-muted sm:text-base">
               A durable AI assistant with long-term memory. Chat on the web, Slack, or iMessage — query Linear and pick up where you left off.
