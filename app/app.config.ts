@@ -1,9 +1,9 @@
 export default defineAppConfig({
   site: {
-    name: "V",
-    title: "V",
+    name: "VisaMOTion",
+    title: "VisaMOTion",
     description:
-      "Your personal AI agent. Chat on the web, Slack, or iMessage — query Linear and pick up where you left off.",
+      "VisaMOTion AI workspace — conversations, account settings and connected services.",
     tagline: "Vercel × Eve",
     author: "Hugo Richard",
     repo: "https://github.com/vercel-labs/personal-agent-template",
@@ -14,15 +14,18 @@ export default defineAppConfig({
   },
   ui: {
     colors: {
-      primary: "neutral",
-      neutral: "neutral",
+      primary: "blue",
+      neutral: "gray",
     },
     button: {
       slots: {
-        base: "active:translate-y-px transition-transform duration-200",
+        base: "min-h-11 rounded-lg font-medium transition-colors duration-150 disabled:cursor-not-allowed",
       },
+      compoundVariants: [
+        { color: "primary", variant: "solid", class: "bg-blue-600 hover:bg-blue-700 text-white focus-visible:outline-blue-500" },
+      ],
       defaultVariants: {
-        size: "sm",
+        size: "md",
       },
     },
   },

@@ -4,6 +4,7 @@ const noStore = { "cache-control": "no-store" } as const;
 export default defineNuxtConfig({
   modules: ["@nuxt/ui", "@nuxt/eslint", "@comark/nuxt", "eve/nuxt", "@nuxthub/core", "@vercel/analytics"],
   css: ["~/assets/css/main.css"],
+  colorMode: { preference: "light", fallback: "light" },
   devtools: { enabled: true },
   compatibilityDate: "latest",
   experimental: {
@@ -48,18 +49,18 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      title: "V",
+      title: "VisaMOTion",
       titleTemplate: "%s",
       charset: "utf-8",
-      viewport: "width=device-width, initial-scale=1",
+      viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
       meta: [
         {
           name: "description",
           content:
             "Your personal AI agent. Chat on the web, Slack, or iMessage — query Linear and pick up where you left off.",
         },
-        { name: "theme-color", content: "#1b1718" },
-        { name: "color-scheme", content: "light dark" },
+        { name: "theme-color", content: "#FFFFFF" },
+        { name: "color-scheme", content: "light" },
         { name: "robots", content: "index, follow" },
       ],
       link: [
